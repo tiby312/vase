@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://dbetvm3m7k1dj"]
+
+[ext_resource type="Script" uid="uid://cpe1imgqvwrjn" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://bbx75yg0vcfgu" path="res://texture/cobblestone_pavement_1k.gltf/textures/cobblestone_pavement_diff_1k.jpg" id="2_1bvp3"]
+[ext_resource type="Script" uid="uid://c8vnltn217quj" path="res://addons/godot-xr-tools/hands/collision_hand.gd" id="2_lquwl"]
+[ext_resource type="Texture2D" uid="uid://cyv02mok8c5lk" path="res://texture/Space Skybox Pack/shine/jettelly_space_shine_blue_UP.png" id="3_7mycd"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0xm2m"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_272bh"]
+panorama = ExtResource("3_7mycd")
+
+[sub_resource type="Sky" id="Sky_lquwl"]
+sky_material = SubResource("PanoramaSkyMaterial_272bh")
+
+[sub_resource type="Environment" id="Environment_ig7tw"]
+background_mode = 2
+sky = SubResource("Sky_lquwl")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ig7tw"]
+size = Vector3(50, 10, 50)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bvp3"]
+albedo_texture = ExtResource("2_1bvp3")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_lquwl"]
+material = SubResource("StandardMaterial3D_1bvp3")
+size = Vector2(50, 50)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7mycd"]
+size = Vector3(0.2, 1, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_272bh"]
+size = Vector3(0.2, 1, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7mycd"]
+size = Vector3(1, 3, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_272bh"]
+size = Vector3(1, 3, 1)
+
+[node name="main" type="Node3D" unique_id=1533376831]
+script = ExtResource("1_ig7tw")
+
+[node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=1710651539]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.39468193, 0)
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=2069452710]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+
+[node name="left hand" type="XRController3D" parent="XROrigin3D" unique_id=1718670909]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
+tracker = &"left_hand"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/left hand" unique_id=334186636]
+mesh = SubResource("BoxMesh_ig7tw")
+
+[node name="XRToolsCollisionHand" type="AnimatableBody3D" parent="XROrigin3D/left hand" unique_id=963126436]
+script = ExtResource("2_lquwl")
+metadata/_custom_type_script = "uid://c8vnltn217quj"
+
+[node name="right hand" type="XRController3D" parent="XROrigin3D" unique_id=1446408689]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
+tracker = &"right_hand"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/right hand" unique_id=502096930]
+mesh = SubResource("BoxMesh_0xm2m")
+
+[node name="XRToolsCollisionHand" type="AnimatableBody3D" parent="XROrigin3D/right hand" unique_id=36109784]
+script = ExtResource("2_lquwl")
+metadata/_custom_type_script = "uid://c8vnltn217quj"
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=799633108]
+transform = Transform3D(1, 0, 0, 0, 0.23868608, 0.97109675, 0, -0.97109675, 0.23868608, 4.677042, 19.690315, 0)
+light_color = Color(0.89735687, 0.8731248, 0.87097585, 1)
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1828626806]
+environment = SubResource("Environment_ig7tw")
+
+[node name="ground" type="StaticBody3D" parent="." unique_id=1870591751]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.1262817, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground" unique_id=767045896]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
+shape = SubResource("BoxShape3D_ig7tw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ground" unique_id=768442273]
+mesh = SubResource("PlaneMesh_lquwl")
+
+[node name="Vase" type="RigidBody3D" parent="." unique_id=454525914]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4519819, 6.707005)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Vase" unique_id=1659462921]
+mesh = SubResource("BoxMesh_7mycd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Vase" unique_id=1171397331]
+shape = SubResource("BoxShape3D_272bh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1380765016]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.663745, 6.74008)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=591192908]
+shape = SubResource("BoxShape3D_7mycd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=536425137]
+mesh = SubResource("BoxMesh_272bh")
