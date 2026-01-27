@@ -6,11 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://cyv02mok8c5lk" path="res://texture/Space Skybox Pack/shine/jettelly_space_shine_blue_UP.png" id="3_7mycd"]
 [ext_resource type="Script" uid="uid://s54orehplb0n" path="res://vase.gd" id="5_lquwl"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
-size = Vector3(0.1, 0.1, 0.1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_0xm2m"]
-size = Vector3(0.1, 0.1, 0.1)
+[sub_resource type="SphereMesh" id="SphereMesh_lquwl"]
+radius = 0.1
+height = 0.2
+radial_segments = 16
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_272bh"]
 panorama = ExtResource("3_7mycd")
@@ -58,7 +57,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
 tracker = &"left_hand"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/left hand" unique_id=334186636]
-mesh = SubResource("BoxMesh_ig7tw")
+mesh = SubResource("SphereMesh_lquwl")
 
 [node name="XRToolsCollisionHand" type="AnimatableBody3D" parent="XROrigin3D/left hand" unique_id=963126436]
 script = ExtResource("2_lquwl")
@@ -68,8 +67,8 @@ metadata/_custom_type_script = "uid://c8vnltn217quj"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
 tracker = &"right_hand"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/right hand" unique_id=502096930]
-mesh = SubResource("BoxMesh_0xm2m")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/right hand" unique_id=267745750]
+mesh = SubResource("SphereMesh_lquwl")
 
 [node name="XRToolsCollisionHand" type="AnimatableBody3D" parent="XROrigin3D/right hand" unique_id=36109784]
 script = ExtResource("2_lquwl")
