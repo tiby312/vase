@@ -91,6 +91,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
 shape = SubResource("BoxShape3D_ig7tw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="ground" unique_id=768442273]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3963952, -0.012748718, 0.15104866)
 mesh = SubResource("PlaneMesh_lquwl")
 
 [node name="Vase" type="RigidBody3D" parent="." unique_id=454525914]
