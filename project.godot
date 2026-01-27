@@ -32,7 +32,14 @@ enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
 
 common/physics_ticks_per_second=90
 
+[rendering]
+
+reflections/specular_occlusion/enabled=false
+anti_aliasing/screen_space_roughness_limiter/enabled=false
+environment/glow/upscale_mode=0
+
 [xr]
 
 openxr/enabled=true
+openxr/foveation_level=0
 shaders/enabled=true
