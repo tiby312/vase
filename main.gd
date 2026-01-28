@@ -12,5 +12,12 @@ func _ready():
 
 		# Change our main viewport to output to the HMD
 		get_viewport().use_xr = true
+		
+		xr_interface.pose_recentered.connect(_recenter);
 	else:
 		print("OpenXR not initialized, please check if your headset is connected")
+
+func _recenter():
+		#todo test
+		XRServer.center_on_hmd(XRServer.RESET_FULL_ROTATION,false);
+		pass;

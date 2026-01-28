@@ -52,7 +52,7 @@ script = ExtResource("1_ig7tw")
 transform = Transform3D(-0.99999774, 0, 0.0021292274, 0, 1, 0, -0.0021292274, 0, -0.99999774, 0, -2.0503807, 5.0331016)
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=2069452710]
-transform = Transform3D(-0.998042, 0, -0.06254664, 0, 1, 0, 0.06254664, 0, -0.998042, 0, 1.7, 0)
+transform = Transform3D(0.9920006, 0, 0.12623365, 0, 1, 0, -0.12623365, 0, 0.9920006, 0, 1.7, 0)
 
 [node name="left hand" type="XRController3D" parent="XROrigin3D" unique_id=1718670909]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
