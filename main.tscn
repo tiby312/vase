@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cpe1imgqvwrjn" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://bbx75yg0vcfgu" path="res://texture/cobblestone_pavement_1k.gltf/textures/cobblestone_pavement_diff_1k.jpg" id="2_1bvp3"]
+[ext_resource type="Script" uid="uid://boagvlqfxhi6q" path="res://xr_origin_3d.gd" id="2_7mycd"]
 [ext_resource type="Script" uid="uid://c8vnltn217quj" path="res://addons/godot-xr-tools/hands/collision_hand.gd" id="2_lquwl"]
 [ext_resource type="Texture2D" uid="uid://cyv02mok8c5lk" path="res://texture/Space Skybox Pack/shine/jettelly_space_shine_blue_UP.png" id="3_7mycd"]
-[ext_resource type="Script" uid="uid://ck4yn3hxuobj7" path="res://addons/godot-xr-tools/player/player_body.gd" id="3_272bh"]
 [ext_resource type="Script" uid="uid://s54orehplb0n" path="res://vase.gd" id="5_lquwl"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_lquwl"]
@@ -51,6 +51,7 @@ script = ExtResource("1_ig7tw")
 
 [node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=1710651539]
 transform = Transform3D(-0.99999774, 0, 0.0021292274, 0, 1, 0, -0.0021292274, 0, -0.99999774, 0, 0, -1.2470382)
+script = ExtResource("2_7mycd")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=2069452710]
 transform = Transform3D(0.9920006, 0, 0.12623365, 0, 1, 0, -0.12623365, 0, 0.9920006, 0, 1.7, 0)
@@ -76,10 +77,6 @@ mesh = SubResource("SphereMesh_lquwl")
 [node name="XRToolsCollisionHand" type="AnimatableBody3D" parent="XROrigin3D/right hand" unique_id=36109784]
 script = ExtResource("2_lquwl")
 metadata/_custom_type_script = "uid://c8vnltn217quj"
-
-[node name="XRToolsPlayerBody" type="CharacterBody3D" parent="XROrigin3D" unique_id=2112754472]
-script = ExtResource("3_272bh")
-metadata/_custom_type_script = "uid://ck4yn3hxuobj7"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=799633108]
 transform = Transform3D(1, 0, 0, 0, 0.23868608, 0.97109675, 0, -0.97109675, 0.23868608, 4.677042, 19.690315, 0)
