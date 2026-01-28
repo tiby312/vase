@@ -49,7 +49,7 @@ size = Vector3(0.5, 1, 0.5)
 script = ExtResource("1_ig7tw")
 
 [node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=1710651539]
-transform = Transform3D(-0.99999774, 0, 0.0021292274, 0, 1, 0, -0.0021292274, 0, -0.99999774, 0, 0.49242568, -2.016746)
+transform = Transform3D(-0.99999774, 0, 0.0021292274, 0, 1, 0, -0.0021292274, 0, -0.99999774, 0, 0, -1.2470382)
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=2069452710]
 transform = Transform3D(0.9920006, 0, 0.12623365, 0, 1, 0, -0.12623365, 0, 0.9920006, 0, 1.7, 0)
