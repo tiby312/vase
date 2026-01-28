@@ -7,8 +7,8 @@
 [ext_resource type="Script" uid="uid://s54orehplb0n" path="res://vase.gd" id="5_lquwl"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_lquwl"]
-radius = 0.1
-height = 0.2
+radius = 0.05
+height = 0.1
 radial_segments = 16
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_272bh"]
@@ -40,16 +40,16 @@ radius = 0.2
 height = 1.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7mycd"]
-size = Vector3(1, 3, 1)
+size = Vector3(0.5, 1, 0.5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_272bh"]
-size = Vector3(1, 3, 1)
+size = Vector3(0.5, 1, 0.5)
 
 [node name="main" type="Node3D" unique_id=1533376831]
 script = ExtResource("1_ig7tw")
 
 [node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=1710651539]
-transform = Transform3D(-0.99999774, 0, 0.0021292274, 0, 1, 0, -0.0021292274, 0, -0.99999774, 0, -2.0503807, 5.0331016)
+transform = Transform3D(-0.99999774, 0, 0.0021292274, 0, 1, 0, -0.0021292274, 0, -0.99999774, 0, 0.49242568, -2.016746)
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=2069452710]
 transform = Transform3D(0.9920006, 0, 0.12623365, 0, 1, 0, -0.12623365, 0, 0.9920006, 0, 1.7, 0)
@@ -86,7 +86,6 @@ shadow_enabled = true
 environment = SubResource("Environment_ig7tw")
 
 [node name="ground" type="StaticBody3D" parent="." unique_id=1870591751 groups=["floor"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.1262817, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ground" unique_id=767045896]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
@@ -97,7 +96,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3963952, -0.012748718, 0.15
 mesh = SubResource("PlaneMesh_lquwl")
 
 [node name="Vase" type="RigidBody3D" parent="." unique_id=454525914]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35596406, 6.707005)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6898301, 0)
 script = ExtResource("5_lquwl")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Vase" unique_id=1659462921]
@@ -107,7 +106,7 @@ mesh = SubResource("CapsuleMesh_lquwl")
 shape = SubResource("CapsuleShape3D_7mycd")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1380765016]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.663745, 6.74008)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=591192908]
 shape = SubResource("BoxShape3D_7mycd")
