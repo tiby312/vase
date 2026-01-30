@@ -13,7 +13,7 @@ func _ready() -> void:
 		# Get the camera's position in the parent's local space (the XROrigin3D's space)
 		# The y-coordinate is the height above the origin's floor
 		player_height = camera.transform.origin.y
-		print("Player physical height: ", player_height, " meters")
+		print("Player starting physical height: ", player_height, " meters")
 	else:
 		print("XRCamera3D node not found!")
 	pass # Replace with function body.
@@ -21,4 +21,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	var camera = find_child("XRCamera3D") # Replace "XRCamera3D" if you named it differently
+	
+	var h=camera.transform.origin.y;
+	if player_height!=h:
+		print("Next height=",h)
+		player_height=h
+	
 	pass

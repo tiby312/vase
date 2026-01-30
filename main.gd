@@ -19,5 +19,5 @@ func _ready():
 
 func _recenter():
 		#todo test
-		XRServer.center_on_hmd(XRServer.RESET_BUT_KEEP_TILT ,false);
+		XRServer.center_on_hmd(XRServer.RESET_BUT_KEEP_TILT ,true);
 		pass;

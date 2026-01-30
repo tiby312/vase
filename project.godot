@@ -37,5 +37,6 @@ environment/glow/upscale_mode=0
 [xr]
 
 openxr/enabled=true
+openxr/reference_space=1
 openxr/foveation_level=0
 shaders/enabled=true
