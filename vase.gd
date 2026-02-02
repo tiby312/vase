@@ -13,16 +13,18 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
+func reset_pos()->void:
+	self.global_position=initial_position;			
+	self.linear_velocity=Vector3.ZERO;
+	self.angular_velocity=Vector3.ZERO;
+	self.transform.basis=initial_transform;
+				
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if not finished:
 		for node in get_colliding_bodies():
 			if node.is_in_group("floor"):
-				self.global_position=initial_position;
-				
-				self.linear_velocity=Vector3.ZERO;
-				self.angular_velocity=Vector3.ZERO;
-				self.transform.basis=initial_transform;
+				reset_pos()
 				#finished = true;
 				return;
 		

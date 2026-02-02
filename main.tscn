@@ -9,6 +9,7 @@
 [ext_resource type="LightmapGIData" uid="uid://cyivoemqw12jn" path="res://main.lmbake" id="7_272bh"]
 [ext_resource type="Texture2D" uid="uid://mabbjg0rlj4h" path="res://blob_shadow.png" id="8_5vw27"]
 [ext_resource type="Script" uid="uid://d17iuqyv83efg" path="res://enemy.gd" id="9_kek77"]
+[ext_resource type="Script" uid="uid://b7nfx2mm3jllq" path="res://game_logic.gd" id="10_4c57u"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_lquwl"]
 radius = 0.05
@@ -182,3 +183,6 @@ update_scale = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.094846725, 1.6976998, 2.6055532)
 size = Vector3(2, 10, 2)
 texture_albedo = ExtResource("8_5vw27")
+
+[node name="GameLogic" type="Node3D" parent="." unique_id=1057274407]
+script = ExtResource("10_4c57u")

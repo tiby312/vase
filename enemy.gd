@@ -1,3 +1,4 @@
+class_name Enemy
 extends RigidBody3D
 
 
@@ -33,12 +34,14 @@ func _on_timer_timeout():
 func _process(_delta: float) -> void:
 	pass
 
+func new_pos():
+	var rad=randf_range(0,2*PI)
+	position.x=cos(rad)*5
+	position.z=sin(rad)*5
+	
 
 func _on_body_entered(body: Node3D)->void:
 	if body.name=="Vase":
 		print("Detected!!!!");
-		var rad=randf_range(0,2*PI)
-		position.x=cos(rad)*5
-		position.z=sin(rad)*5
-	
+		new_pos()
 	pass
