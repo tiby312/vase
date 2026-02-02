@@ -61,6 +61,8 @@ material = SubResource("StandardMaterial3D_4c57u")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dg77c"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_kek77"]
+
 [node name="main" type="Node3D" unique_id=1533376831]
 script = ExtResource("1_ig7tw")
 
@@ -130,7 +132,7 @@ mesh = SubResource("CapsuleMesh_lquwl")
 shape = SubResource("CapsuleShape3D_7mycd")
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="Vase" unique_id=1990366172]
-remote_path = NodePath("../../Decal")
+remote_path = NodePath("../../VaseDecal")
 update_rotation = false
 update_scale = false
 
@@ -144,14 +146,17 @@ shape = SubResource("BoxShape3D_7mycd")
 layers = 17
 mesh = SubResource("BoxMesh_272bh")
 
-[node name="Decal" type="Decal" parent="." unique_id=475971466]
+[node name="VaseDecal" type="Decal" parent="." unique_id=475971466]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.69, 0)
 size = Vector3(2, 10, 2)
 texture_albedo = ExtResource("8_5vw27")
 cull_mask = 1047568
 
-[node name="Enemy" type="Node3D" parent="." unique_id=1662060735]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0922813, 1.6976998, 1.5197824)
+[node name="Enemy" type="RigidBody3D" parent="." unique_id=1985998560]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.094846725, 1.6976998, 2.6055532)
+gravity_scale = 0.0
+can_sleep = false
+linear_damp = 2.0
 script = ExtResource("9_kek77")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy" unique_id=1624964128]
@@ -161,3 +166,19 @@ mesh = SubResource("CapsuleMesh_efxa6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy/Area3D" unique_id=881191242]
 shape = SubResource("CapsuleShape3D_dg77c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy" unique_id=760689150]
+shape = SubResource("SphereShape3D_kek77")
+disabled = true
+
+[node name="Timer" type="Timer" parent="Enemy" unique_id=1282333563]
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Enemy" unique_id=1289137845]
+remote_path = NodePath("../../EnemyDecal")
+update_rotation = false
+update_scale = false
+
+[node name="EnemyDecal" type="Decal" parent="." unique_id=1401292129]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.094846725, 1.6976998, 2.6055532)
+size = Vector3(2, 10, 2)
+texture_albedo = ExtResource("8_5vw27")
