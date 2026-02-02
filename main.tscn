@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://s54orehplb0n" path="res://vase.gd" id="5_lquwl"]
 [ext_resource type="LightmapGIData" uid="uid://cyivoemqw12jn" path="res://main.lmbake" id="7_272bh"]
 [ext_resource type="Texture2D" uid="uid://mabbjg0rlj4h" path="res://blob_shadow.png" id="8_5vw27"]
+[ext_resource type="Script" uid="uid://d17iuqyv83efg" path="res://enemy.gd" id="9_kek77"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_lquwl"]
 radius = 0.05
@@ -51,6 +52,14 @@ size = Vector3(0.5, 1, 0.5)
 lightmap_size_hint = Vector2i(9, 18)
 add_uv2 = true
 size = Vector3(0.5, 1, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4c57u"]
+albedo_color = Color(1, 0, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_efxa6"]
+material = SubResource("StandardMaterial3D_4c57u")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dg77c"]
 
 [node name="main" type="Node3D" unique_id=1533376831]
 script = ExtResource("1_ig7tw")
@@ -140,3 +149,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6898301, 0.78107107)
 size = Vector3(2, 10, 2)
 texture_albedo = ExtResource("8_5vw27")
 cull_mask = 1047568
+
+[node name="Enemy" type="Node3D" parent="." unique_id=1662060735]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0922813, 1.6976998, 0)
+script = ExtResource("9_kek77")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy" unique_id=1624964128]
+mesh = SubResource("CapsuleMesh_efxa6")
+
+[node name="Area3D" type="Area3D" parent="Enemy" unique_id=685799702]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy/Area3D" unique_id=881191242]
+shape = SubResource("CapsuleShape3D_dg77c")
