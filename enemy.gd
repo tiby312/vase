@@ -18,7 +18,8 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node3D)->void:
 	if body.name=="Vase":
 		print("Detected!!!!");
-		position.x=randf_range(-2,2)
-		position.z=randf_range(-2,2)
+		var rad=randf_range(0,2*PI)
+		position.x=cos(rad)*1.2
+		position.z=sin(rad)*1.2
 	
 	pass
