@@ -16,7 +16,9 @@ func _ready() -> void:
 	
 	
 	var second:Enemy=j as Enemy
+	second.position=en.position
 	second.new_pos()
+	
 	pass # Replace with function body.
 
 
